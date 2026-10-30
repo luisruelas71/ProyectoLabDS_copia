@@ -4,4 +4,27 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+    <!-- comente esto porque me da conflictos en los diseños
+    <context-param>
+    <param-name>primefaces.THEME</param-name>
+    <param-value>south-street</param-value>
+  </context-param> -->
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>
+      30
+    </session-timeout>
+  </session-config>
+    <welcome-file-list>
+        <welcome-file>captura_foto.xhtml</welcome-file> <!--Nota esto es lo que va ejecutar primero al momento de ejecutar el tom-->
+    </welcome-file-list>
 </web-app>
