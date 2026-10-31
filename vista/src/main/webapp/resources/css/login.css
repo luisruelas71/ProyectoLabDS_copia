@@ -1,0 +1,50 @@
+.login-body {
+    margin: 0;
+    min-height: 100vh;
+    background: #00703C;
+    font-family: Inter, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.deco { position: absolute; border-radius: 50%; z-index: 0; }
+.deco-1 { width: 360px; height: 360px; background: #FFB81C; opacity: 0.12; top: -80px; left: -80px; }
+.deco-2 { width: 520px; height: 520px; background: #005A31; opacity: 0.6; bottom: -200px; right: -160px; }
+
+.login-card {
+    position: relative; z-index: 1;
+    width: 440px; max-width: 92vw; box-sizing: border-box;
+    background: #FFFFFF;
+    border-top: 8px solid #FFB81C;
+    border-radius: 16px;
+    padding: 32px 40px 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.login-logo { width: 90px; height: auto; }
+.login-title { margin: 12px 0 24px; font-size: 24px; font-weight: 700; color: #00703C; }
+
+.login-card form { text-align: left; }
+.login-label { display: block; margin: 14px 0 6px; font-size: 13px; font-weight: 600; color: #374151; }
+.login-card .login-input,
+.login-card .ui-inputfield.login-input {
+    width: 100%; height: 48px; box-sizing: border-box;
+    padding: 0 16px; font-size: 14px;
+    background: #F3F7F4; border: 1px solid #CBD5D1; border-radius: 8px;
+}
+.login-card .ui-password { display: block; width: 100%; }
+.login-card .login-boton {
+    width: 100%; height: 48px; margin-top: 22px;
+    background: #00703C !important; border-color: #00703C !important;
+    border-radius: 8px; color: #FFFFFF; font-size: 16px; font-weight: 700;
+}
+.login-card .login-boton:hover { background: #005A31 !important; }
+
+.login-registro { margin: 22px 0 0; font-size: 14px; color: #6B7280; }
+.link-registro { color: #00703C; font-weight: 700; text-decoration: underline; }
+.login-pie { position: relative; z-index: 1; margin-top: 28px; font-size: 12px; color: rgba(255, 255, 255, 0.8); }
+
+.login-card .ui-messages-error { margin-bottom: 8px; border-radius: 8px; }

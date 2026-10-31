@@ -1,30 +1,35 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-    <!-- comente esto porque me da conflictos en los diseños
-    <context-param>
-    <param-name>primefaces.THEME</param-name>
-    <param-value>south-street</param-value>
-  </context-param> -->
-  <servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>*.xhtml</url-pattern>
-  </servlet-mapping>
+    <display-name>Sistema de Profesores UABC</display-name>
 
-  <session-config>
-    <session-timeout>
-      30
-    </session-timeout>
-  </session-config>
+    <!--<filter>
+        <filter-name>FiltroSesion</filter-name>
+        <filter-class>ui.FiltroSesion</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FiltroSesion</filter-name>
+        <url-pattern>/captura_foto.xhtml</url-pattern>
+    </filter-mapping>
+    -->
+
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
     <welcome-file-list>
-        <welcome-file>captura_foto.xhtml</welcome-file> <!--Nota esto es lo que va ejecutar primero al momento de ejecutar el tom-->
+        <welcome-file>login.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>

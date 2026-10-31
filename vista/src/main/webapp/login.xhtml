@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="jakarta.faces.passthrough">
+<h:head>
+    <title>Iniciar sesión - Sistema de Profesores</title>
+    <h:outputStylesheet library="css" name="login.css"/>
+</h:head>
+<h:body styleClass="login-body">
+    <div class="deco deco-1"></div>
+    <div class="deco deco-2"></div>
+
+    <div class="login-card">
+        <h:graphicImage library="img" name="escudo_uabc.png" styleClass="login-logo" alt="UABC"/>
+        <h1 class="login-title">Sistema de Profesores</h1>
+
+        <h:form id="loginForm">
+            <p:messages id="mensajes" showDetail="false" closable="false"/>
+
+            <h:outputLabel for="correo" value="Correo institucional" styleClass="login-label"/>
+            <p:inputText id="correo" value="#{loginController.correo}"
+                         styleClass="login-input" maxlength="60"
+                         pt:placeholder="@uabc.edu.mx"/>
+
+            <h:outputLabel for="contraseña" value="Contraseña" styleClass="login-label"/>
+            <p:password id="contraseña" value="#{loginController.contraseña}"
+                        styleClass="login-input" feedback="false" maxlength="60"/>
+
+            <p:commandButton id="btnIniciar" value="Iniciar sesión"
+                             action="#{loginController.iniciarSesion}"
+                             ajax="false" styleClass="login-boton"/>
+        </h:form>
+
+        <p class="login-registro">¿No tienes cuenta? <a href="#" class="link-registro">Crear cuenta</a></p>
+    </div>
+
+    <p class="login-pie">© Universidad Autónoma de Baja California</p>
+</h:body>
+</html>
