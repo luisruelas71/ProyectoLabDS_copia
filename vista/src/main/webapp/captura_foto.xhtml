@@ -104,52 +104,34 @@
     <div class="camera-container">
         <h:form id="firmaForm">
             
-            <!-- BARRA SUPERIOR DE NAVEGACIÓN -->
-            <div class="header-bar">
-                
-                <!-- ================================================================= -->
-                <!-- FUNCIONALIDAD DESACTIVADA: BOTÓN REGRESAR (RETURN)                -->
-                <!-- Se deshabilita con disabled="true" y onclick="return false;"       -->
-                <!-- ================================================================= -->
-                <p:commandLink id="btnRegresar" 
-                               action="#{firmaController.regresar}" 
-                               disabled="true" 
-                               onclick="return false;" 
-                               styleClass="btn-disabled"
-                               title="Regresar (Función desactivada temporamente)">
-                    <i class="pi pi-arrow-left" style="font-size: 1.5rem; color: #ffffff;"></i>
-                </p:commandLink>
-                <!-- ================================================================= -->
 
-                <!-- BOTÓN CERRAR -->
+            <div class="header-bar">
+
+                <h:outputLink value="firmas.xhtml" title="Regresar">
+                    <i class="pi pi-arrow-left" style="font-size: 1.5rem; color: #ffffff;"></i>
+                </h:outputLink>
+
                 <p:commandLink action="#{firmaController.cerrar}" title="Cerrar">
                     <i class="pi pi-times-circle" style="font-size: 1.5rem; color: #ff3333;"></i>
                 </p:commandLink>
             </div>
 
-            <!-- TÍTULO Y SUBTÍTULO -->
             <h:outputText value="Foto destinado a la firma" styleClass="title-text" /><br/>
             <h:outputText value="Colócate dentro del encuadre y toma la foto cuando estés listo." styleClass="subtitle-text" />
 
-            <!-- MARCO Y VISTA PREVIA DE LA CÁMARA -->
             <div class="viewfinder-box">
                 <i class="pi pi-camera" style="font-size: 2.5rem; color: #888888;"></i>
                 <span class="viewfinder-text">Vista previa de la cámara</span>
             </div>
 
-            <!-- NOTA INFORMATIVA -->
             <div class="info-note">
                 <i class="pi pi-info-circle"></i>
                 <h:outputText value="Nota: Busca un lugar bien iluminado y mira hacia la cámara." />
             </div>
 
-            <!-- BARRA DE ACCIONES / BOTONES -->
-            <div class="action-bar">
+             <div class="action-bar">
                 
-                <!-- ================================================================= -->
-                <!-- FUNCIONALIDAD DESACTIVADA: TOMAR FOTO                             -->
-                <!-- Se establece disabled="true" y se evitan eventos ajax             -->
-                <!-- ================================================================= -->
+
                 <p:commandButton id="btnTomarFoto"
                                  value="Tomar foto" 
                                  icon="pi pi-camera" 
@@ -157,17 +139,14 @@
                                  disabled="true"
                                  styleClass="btn-disabled"
                                  style="background-color: #008000; border-color: #00e676; color: #ffffff;" />
-                <!-- ================================================================= -->
 
                 <div class="right-buttons">
-                    <!-- BOTÓN DESCARTAR -->
                     <p:commandButton id="btnDescartar"
                                      value="Descartar" 
                                      action="#{firmaController.descartarFoto}" 
                                      update="@form"
                                      style="background-color: #ffffff; color: #000000; border: 2px solid #ff0000; font-weight: bold;" />
 
-                    <!-- BOTÓN ACEPTAR (Avanza siempre, con o sin foto) -->
                     <p:commandButton id="btnAceptar"
                                      value="Aceptar" 
                                      icon="pi pi-check" 

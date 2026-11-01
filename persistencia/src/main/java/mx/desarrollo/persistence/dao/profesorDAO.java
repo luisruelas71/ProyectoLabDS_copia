@@ -13,7 +13,7 @@ public class profesorDAO {
         }
         EntityManager em = hibernateUtils.getEntityManager();
         try {
-            return em.createQuery(
+            return  em.createQuery(
                             "SELECT p FROM Profesor p JOIN FETCH p.tipo "
                                     + "WHERE LOWER(p.correoInstitucional) = :correo",
                             Profesor.class)
@@ -21,6 +21,7 @@ public class profesorDAO {
                     .getResultStream()
                     .findFirst()
                     .orElse(null);
+
         } finally {
             em.close();
         }

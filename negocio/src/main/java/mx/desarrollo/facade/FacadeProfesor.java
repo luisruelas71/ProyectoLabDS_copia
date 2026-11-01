@@ -10,7 +10,6 @@ public class FacadeProfesor {
     private static final Pattern FORMATO_CORREO =
             Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
 
-
     public Profesor iniciarSesion(String correo, String contrasena) {
         if (correo == null || correo.isBlank() || contrasena == null || contrasena.isEmpty()) {
             throw new IllegalArgumentException("Completa todos los campos");
@@ -29,10 +28,20 @@ public class FacadeProfesor {
     }
 
     private boolean contrasenaValida(String plana, String hash) {
+        if (plana == null || hash == null) {
+            return false;
+        }
+        String planaLimpia = plana.trim();
+        String hashLimpio = hash.trim();
+        // 1. Comparación directa para texto plano ("Admin" == "Admin")
+        if (planaLimpia.equals(hashLimpio)) {
+            return true;
+        }
+        // 2. Comparación por BCrypt si está encriptada
         try {
-            return BCrypt.checkpw(plana, hash);
+            return BCrypt.checkpw(planaLimpia, hashLimpio);
         } catch (IllegalArgumentException e) {
-            return false; // el hash guardado no tiene formato BCrypt
+            return false;
         }
     }
 }

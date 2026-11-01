@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.Map;
 import mx.desarrollo.delegate.DelegateProfesor;
 import mx.desarrollo.entity.Profesor;
+//import org.hibernate.Hibernate;
 
 @Named("loginController")
 @RequestScoped
@@ -31,9 +32,12 @@ public class Login implements Serializable {
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
             sesion.put("profesorId", profesor.getId());
             sesion.put("profesorCorreo", profesor.getCorreoInstitucional());
-            sesion.put("profesorTipo", profesor.getTipo().getNombreTipo());
-            sesion.put("profesorLimiteFirmas", profesor.getTipo().getLimiteFirmas());
-            return "captura_foto?faces-redirect=true";
+
+            //if (profesor.getTipo() != null && Hibernate.isInitialized(profesor.getTipo())) {
+                sesion.put("profesorTipo", profesor.getTipo().getNombreTipo());
+                sesion.put("profesorLimiteFirmas", profesor.getTipo().getLimiteFirmas());
+            //}
+            return "inicio?faces-redirect=true";
         } catch (IllegalArgumentException e) {
             mostrarError(e.getMessage());
             return null;

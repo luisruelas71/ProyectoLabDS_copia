@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="jakarta.faces.passthrough">
+<h:head>
+    <title>Inicio - Portal Universitario UABC</title>
+    <h:outputStylesheet library="css" name="PaginaNavegacion.css"/>
+</h:head>
+<h:body>
+
+    <div class="header-portal">
+        <div class="logo-container">
+            <h:graphicImage library="img" name="escudo_uabc.png" alt="Logo UABC" styleClass="logo-uabc"/>
+            <div class="titulo-universidad">
+                Universidad Autónoma<br/>de Baja California
+            </div>
+        </div>
+        <div class="opciones-header">
+            <h:form id="formCerrarSesion">
+                <h:commandLink value="Cerrar Sesión" action="#{loginController.cerrarSesion}" styleClass="btn-cerrar-sesion"/>
+            </h:form>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="seccion-subtitulo">INICIO</div>
+        <h1 class="titulo-pagina">Bienvenido a tu portal</h1>
+        <p class="descripcion-pagina">Selecciona la opción que deseas consultar Profesor.</p>
+
+        <div class="grid-tarjetas">
+            <!-- Tarjeta 1: Firmas -->
+            <h:outputLink value="firmas.xhtml" styleClass="card-link">
+                <div class="card card-verde">
+                    <div>
+                        <div class="card-linea-decorativa"></div>
+                        <h2 class="card-titulo">Firmas</h2>
+                        <p class="card-descripcion">Accede al espacio de firmas.</p>
+                    </div>
+
+                    <h:graphicImage library="img" name="Firma.png" alt="Firmas" styleClass="card-imagen-derecha"/>
+
+                    <div class="card-accion">
+                        <span>Entrar</span> &#8594;
+                    </div>
+                </div>
+            </h:outputLink>
+
+            <!-- Tarjeta 2: Tareas -->
+            <h:outputLink value="#" styleClass="card-link">
+                <div class="card card-blanca">
+                    <div>
+                        <div class="card-linea-decorativa"></div>
+                        <h2 class="card-titulo">Tareas</h2>
+                        <p class="card-descripcion">Consulta tus tareas.</p>
+                    </div>
+
+                    <h:graphicImage library="img" name="Tarea.png" alt="Tareas" styleClass="card-imagen-derecha"/>
+
+                    <div class="card-accion">
+                        <span>Entrar</span> &#8594;
+                    </div>
+                </div>
+            </h:outputLink>
+        </div>
+    </div>
+
+    <div class="footer-portal">
+        <p>Universidad Autónoma de Baja California</p>
+        <div class="footer-fecha">
+            <span class="footer-linea"></span>
+            <span>Fecha de entrada y Hora</span>
+        </div>
+    </div>
+
+</h:body>
+</html>

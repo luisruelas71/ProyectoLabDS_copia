@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="jakarta.faces.passthrough">
+<h:head>
+    <title>Gestión de Firmas - UABC</title>
+    <h:outputStylesheet library="css" name="PaginaNavegacion.css"/>
+</h:head>
+<h:body>
+
+
+    <div class="header-portal">
+        <div class="logo-container">
+            <h:graphicImage library="img" name="escudo_uabc.png" alt="Logo UABC" styleClass="logo-uabc"/>
+            <div class="titulo-universidad">
+                Universidad Autónoma<br/>de Baja California
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Botón para regresar al inicio -->
+        <div style="margin-bottom: 1.5rem;">
+            <h:outputLink value="inicio.xhtml" styleClass="btn-volver">
+                &#8592; Volver al inicio
+            </h:outputLink>
+        </div>
+
+        <h1 class="titulo-pagina">Gestión de Firmas</h1>
+        <p class="descripcion-pagina">Selecciona la opción que deseas realizar.</p>
+
+        <div class="grid-tarjetas">
+            <!-- Registrar Firmas Navega a captura_foto.xhtml -->
+            <h:outputLink value="captura_foto.xhtml" styleClass="card-link">
+                <div class="card card-verde">
+                    <div>
+                        <div class="card-linea-decorativa"></div>
+                        <h2 class="card-titulo">Registrar Firmas</h2>
+                        <p class="card-descripcion">Agrega y valida nuevas firmas en el sistema.</p>
+                    </div>
+
+                    <h:graphicImage library="img" name="Firma_Registra.png" alt="Registrar Firmas" styleClass="card-imagen-derecha"/>
+
+                    <div class="card-accion">
+                        <span>Entrar</span> &#8594;
+                    </div>
+                </div>
+            </h:outputLink>
+
+            <!-- Historial de firmas -->
+            <h:outputLink value="#" styleClass="card-link">
+                <div class="card card-blanca">
+                    <div>
+                        <div class="card-linea-decorativa"></div>
+                        <h2 class="card-titulo">Historial de firmas</h2>
+                        <p class="card-descripcion">Visualiza las firmas registradas.</p>
+                    </div>
+
+                    <h:graphicImage library="img" name="Firma_Historial.png" alt="Historial de firmas" styleClass="card-imagen-derecha"/>
+
+                    <div class="card-accion">
+                        <span>Entrar</span> &#8594;
+                    </div>
+                </div>
+            </h:outputLink>
+
+            <!-- Eliminar Firmas -->
+            <h:outputLink value="#" class="card-link">
+                <div class="card card-blanca">
+                    <div>
+                        <div class="card-linea-decorativa"></div>
+                        <h2 class="card-titulo">Eliminar Firmas</h2>
+                        <p class="card-descripcion">Remueve firmas del registro de manera segura.</p>
+                    </div>
+
+                    <h:graphicImage library="img" name="Firma_Eliminar.png" alt="Eliminar Firmas" styleClass="card-imagen-derecha"/>
+
+                    <div class="card-accion">
+                        <span>Entrar</span> &#8594;
+                    </div>
+                </div>
+            </h:outputLink>
+        </div>
+    </div>
+
+    <div class="footer-portal">
+        <p>Universidad Autónoma de Baja California</p>
+    </div>
+
+</h:body>
+</html>
